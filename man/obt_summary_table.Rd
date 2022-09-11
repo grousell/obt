@@ -4,16 +4,14 @@
 \alias{obt_summary_table}
 \title{Summary Table}
 \usage{
-obt_summary_table(df, group_1, group_2, ...)
+obt_summary_table(df, group_1, group_2)
 }
 \arguments{
-\item{df}{}
+\item{df}{Dataframe or tibble}
 
-\item{group_1}{}
+\item{group_1}{First grouping variable}
 
-\item{group_2}{}
-
-\item{...}{}
+\item{group_2}{Second grouping variable (optional)}
 }
 \value{
 A tibble with counts and percentages of each group
@@ -23,7 +21,6 @@ Given a dataframe or tibble, returns a tibble with counts and percentages
 of a group. Can be a single group, or group 2 can be nested within group 1
 }
 \examples{
-dat <- palmerpenguins::penguins
-obt_summary_table (dat, species)
-obt_summary_table (dat, species, sex)
+obt_summary_table (mtcars, gear)
+obt_summary_table (mtcars, gear, carb)
 }
