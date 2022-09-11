@@ -3,14 +3,13 @@ Title: Functions for Ontario School Board data professionals
 Version: 0.0.0.9000
 Authors@R: 
     person("Rousell", "Greg", , "grousell@gmail.com", role = c("aut", "cre"))
-Description: The obt (Ontario Board Tools) is a collection of functions for data 
-professionals working in Ontario school boards. These functions are designed to assist
-those working with common data sets across the province, such as Report Card, EQAO, OUAC, 
-OCAS and others. 
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Description: The obt (Ontario Board Tools) is a collection of functions for data professionals working in Ontario school boards. These functions are designed to assist those working with common data sets across the province, such as Report Card, EQAO, OUAC, OCAS and others. 
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 URL: https://github.com/grousell/obt
 BugReports: https://github.com/grousell/obt/issues
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
