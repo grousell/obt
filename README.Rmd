@@ -31,10 +31,39 @@ You can install the development version of obt from [GitHub](https://github.com/
 devtools::install_github("grousell/obt")
 ```
 
-## Example
+## Recode Report Card Marks to Achievement Levels 
 
-```{r example}
+```{r recode_reportcard_to_levels}
 library(obt)
-## basic example code
+library(dplyr)
+df <- ele_rc
+
+df |>
+  select (id, reading) |> 
+  mutate (reading_level = obt_recode_rc_to_levels(reading))
+  
 ```
 
+## Summary Table
+
+```{r summary_table}
+library(obt)
+
+df <- ele_rc
+
+df |> 
+  obt_summary_table(school)
+
+```
+
+## Grouped Summary Table
+
+```{r grouped_summary_table}
+library(obt)
+
+df <- ele_rc
+
+df |> 
+  obt_summary_table(school, grade)
+
+```
