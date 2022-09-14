@@ -23,18 +23,12 @@ devtools::install_github("grousell/obt")
 
 ## Recode Report Card Marks to Achievement Levels
 
+This functions takes a vector of report card marks and re-codes into
+Ontario achievement levels.
+
 ``` r
 library(obt)
 library(dplyr)
-#> Warning: package 'dplyr' was built under R version 4.1.3
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 df <- ele_rc
 
 df |>
@@ -58,6 +52,10 @@ df |>
 ```
 
 ## Summary Table
+
+This function provides a summary table of counts and percentages for
+either a single variable, or a grouped variable. This table can then be
+used directly with `ggplot2` for visualisations.
 
 ``` r
 library(obt)

@@ -33,7 +33,8 @@ devtools::install_github("grousell/obt")
 
 ## Recode Report Card Marks to Achievement Levels 
 
-```{r recode_reportcard_to_levels}
+This functions takes a vector of report card marks and re-codes into Ontario achievement levels. 
+```{r recode_reportcard_to_levels, warning=FALSE, message=FALSE}
 library(obt)
 library(dplyr)
 df <- ele_rc
@@ -46,6 +47,7 @@ df |>
 
 ## Summary Table
 
+This function provides a summary table of counts and percentages for either a single variable, or a grouped variable. This table can then be used directly with `ggplot2` for visualisations. 
 ```{r summary_table}
 library(obt)
 
