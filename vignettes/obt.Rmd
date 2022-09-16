@@ -1,0 +1,29 @@
+---
+title: "obt"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{obt}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The goal of the `obt` package is to provide tools for data professionals in Ontario school boards (and elsewhere) to work with common data sets across the province. This includes:
+* Report Card Data (elementary and secondary)
+* EQAO Data (Primary and Junior assessments of Reading, Writing and Mathematics, Grade 9 Assessments of Mathematics and the Ontario Secondary School Literacy Test)
+* Ontario University Application Center (OUAC) and Ontario College Application Service (OCAS) data
+
+```{r setup}
+library(obt)
+library(dplyr)
+
+df <- ele_rc
+
+head (ele_rc)
+```
