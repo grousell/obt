@@ -16,12 +16,3 @@ Character vector with Pass/Fail
 All alpha and numeric marks are re-coded to either pass or fail, including R.
 I remains the same as it's "Insufficient Evidence"
 }
-\examples{
-df <- ele_rc
-ele_rc$reading
-[1] "R"  "I"  "D"  "C"  "A-"
-
-obt_recode_rc_pass_fail(ele_rc$reading)
-[1] "fail" "I" "pass" "pass" "pass"
-
-}

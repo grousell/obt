@@ -15,12 +15,3 @@ Character vector with Met Standard / Did not Meet Standard
 \description{
 Recode Report Card marks to Met Standard / Did not Meet Standard
 }
-\examples{
-df <- ele_rc
-ele_rc$reading
-[1] "R"  "I"  "D"  "C"  "A-"
-
-obt_recode_rc_L34(ele_rc$reading)
-[1] "did_not_meet_standard" "did_not_meet_standard" "did_not_meet_standard" "did_not_meet_standard" "met_standard"
-
-}

@@ -5,14 +5,6 @@
 #' @return Character vector with Met Standard / Did not Meet Standard
 #' @export
 #'
-#' @examples
-#' df <- ele_rc
-#' ele_rc$reading
-#' [1] "R"  "I"  "D"  "C"  "A-"
-#'
-#' obt_recode_rc_L34(ele_rc$reading)
-#' [1] "did_not_meet_standard" "did_not_meet_standard" "did_not_meet_standard" "did_not_meet_standard" "met_standard"
-#'
 
 obt_recode_rc_L34 <- function (x){
 

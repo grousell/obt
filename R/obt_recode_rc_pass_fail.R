@@ -8,14 +8,7 @@
 #' @return Character vector with Pass/Fail
 #' @export
 #'
-#' @examples
-#' df <- ele_rc
-#' ele_rc$reading
-#' [1] "R"  "I"  "D"  "C"  "A-"
-#'
-#' obt_recode_rc_pass_fail(ele_rc$reading)
-#' [1] "fail" "I" "pass" "pass" "pass"
-#'
+
 obt_recode_rc_pass_fail <- function (x){
 
   pass <- c(as.character(c(50:100)),

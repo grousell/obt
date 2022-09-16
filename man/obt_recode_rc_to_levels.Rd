@@ -16,12 +16,3 @@ Character vector with achievement levels (NE1, Level 1, Level 2, Level 3, Level 
 This function takes report card marks, both alpha (A+, B, C-, etc.) and numeric (68, 72, 86, etc.)
 and converts to achievement levels used in Ontario school boards
 }
-\examples{
-df <- ele_rc
-
-df$reading
-[1] "R"  "I"  "D"  "C"  "A-"
-
-obt_recode_rc_to_levels(df$reading)
-[1] "NE1" "NE1" "Level 1" "Level 2" "Level 4"
-}
