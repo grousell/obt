@@ -1,10 +1,10 @@
 #' Recode Report Card marks to Met Standard / Did not Meet Standard
 #'
 #' @param x
+#' Vector of report card marks. Can be either alpha (C+, B-, A) or numeric (88, 63, 79)
 #'
 #' @return Character vector with Met Standard / Did not Meet Standard
 #' @export
-#'
 
 obt_recode_rc_L34 <- function (x){
 

@@ -7,7 +7,7 @@
 obt_recode_rc_to_levels(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{Vector of report card marks. Can be either alpha (C+, B-, A) or numeric (88, 63, 79)}
 }
 \value{
 Character vector with achievement levels (NE1, Level 1, Level 2, Level 3, Level 4)

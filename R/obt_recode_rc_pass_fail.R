@@ -4,10 +4,10 @@
 #' I remains the same as it's "Insufficient Evidence"
 #'
 #' @param x
+#' Vector of report card marks. Can be either alpha (C+, B-, A) or numeric (88, 63, 79)
 #'
 #' @return Character vector with Pass/Fail
 #' @export
-#'
 
 obt_recode_rc_pass_fail <- function (x){
 

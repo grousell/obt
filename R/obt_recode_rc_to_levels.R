@@ -5,9 +5,11 @@
 #' and converts to achievement levels used in Ontario school boards
 #'
 #' @param x
+#' Vector of report card marks. Can be either alpha (C+, B-, A) or numeric (88, 63, 79)
 #'
 #' @return Character vector with achievement levels (NE1, Level 1, Level 2, Level 3, Level 4)
 #' @export
+
 
 
 obt_recode_rc_to_levels <- function (x){

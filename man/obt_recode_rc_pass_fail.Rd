@@ -7,7 +7,7 @@
 obt_recode_rc_pass_fail(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{Vector of report card marks. Can be either alpha (C+, B-, A) or numeric (88, 63, 79)}
 }
 \value{
 Character vector with Pass/Fail

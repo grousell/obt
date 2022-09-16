@@ -15,6 +15,8 @@
 #' @return A tibble with counts and percentages of each group
 #' @export
 #'
+#' @importFrom rlang .data
+#'
 #' @examples
 #' obt_summary_table (mtcars, gear)
 #' obt_summary_table (mtcars, gear, carb)
@@ -30,10 +32,11 @@ obt_summary_table <- function (df, group_1, group_2){
   if (exist == TRUE) {
     tbl |>
       dplyr::group_by ({{group_1}}) |>
-      dplyr::mutate (perc = n / sum (n))}
+      dplyr::mutate (perc = .data$n / sum (.data$n))}
   else {
     tbl |>
       dplyr::ungroup() |>
-      dplyr::mutate(perc = n / sum(n))
+      dplyr::mutate(perc = .data$n / sum(.data$n))
   }
 }
+
