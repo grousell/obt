@@ -13,10 +13,10 @@
 #' df <- ele_rc
 #'
 #' df$reading
-#' [1] "C+" "A-" "C"  "C"  "B-" "C-" "B-" "A-" "78" "D"  "R"  "B-" "60" "D"  "B-"
+#' [1] "R"  "I"  "D"  "C"  "A-"
 #'
 #' obt_recode_rc_to_levels(df$reading)
-#' [1] "Level 2" "Level 4" "Level 2" "Level 2" "Level 3" "Level 2" "Level 3" "Level 4" "Level 3" "Level 1" "NE1" "Level 3" "Level 2" "Level 1" "Level 3"
+#' [1] "NE1" "NE1" "Level 1" "Level 2" "Level 4"
 
 obt_recode_rc_to_levels <- function (x){
 

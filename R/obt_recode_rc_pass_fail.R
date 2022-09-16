@@ -1,5 +1,8 @@
 #' Recode Report Card marks to Pass/Fail
 #'
+#' All alpha and numeric marks are re-coded to either pass or fail, including R.
+#' I remains the same as it's "Insufficient Evidence"
+#'
 #' @param x
 #'
 #' @return Character vector with Pass/Fail
@@ -8,10 +11,10 @@
 #' @examples
 #' df <- ele_rc
 #' ele_rc$reading
-#' [1] "C+" "A-" "C"  "C"  "B-" "C-" "B-" "A-" "78" "D"  "R"  "B-" "60" "D"  "B-"
+#' [1] "R"  "I"  "D"  "C"  "A-"
 #'
 #' obt_recode_rc_pass_fail(ele_rc$reading)
-#' [1] "pass" "pass" "pass" "pass" "pass" "pass" "pass" "pass" "pass" "pass" "fail" "pass" "pass" "pass" "pass"
+#' [1] "fail" "I" "pass" "pass" "pass"
 #'
 obt_recode_rc_pass_fail <- function (x){
 
