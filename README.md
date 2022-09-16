@@ -4,6 +4,8 @@
 # obt
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/grousell/obt/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/grousell/obt/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of Ontario Board Tools (obt)) is to provide data professionals
@@ -37,16 +39,16 @@ df |>
 #> # A tibble: 2,500 x 3
 #>        id reading reading_level
 #>     <int> <chr>   <chr>        
-#>  1 164213 C+      Level 2      
-#>  2 299554 A-      Level 4      
-#>  3 392994 C       Level 2      
-#>  4 190068 C       Level 2      
-#>  5 266050 B-      Level 3      
-#>  6 148942 C-      Level 2      
-#>  7 193816 B-      Level 3      
-#>  8 547246 A-      Level 4      
-#>  9 372111 78      Level 3      
-#> 10 462258 D       Level 1      
+#>  1 310535 R       NE1          
+#>  2 324271 R       NE1          
+#>  3 394022 52      Level 1      
+#>  4 482099 A-      Level 4      
+#>  5 274236 D       Level 1      
+#>  6 271998 B-      Level 3      
+#>  7 424555 C+      Level 2      
+#>  8 314324 B-      Level 3      
+#>  9 281326 R       NE1          
+#> 10 318039 B-      Level 3      
 #> # ... with 2,490 more rows
 #> # i Use `print(n = ...)` to see more rows
 ```
@@ -83,20 +85,20 @@ df <- ele_rc
 
 df |> 
   obt_summary_table(school, grade)
-#> # A tibble: 40 x 4
+#> # A tibble: 41 x 4
 #> # Groups:   school [5]
 #>    school                        grade     n  perc
 #>    <chr>                         <chr> <int> <dbl>
-#>  1 Degrassi Community School     1        53 0.106
-#>  2 Degrassi Community School     2        55 0.11 
-#>  3 Degrassi Community School     3        69 0.138
-#>  4 Degrassi Community School     4        65 0.13 
-#>  5 Degrassi Community School     5        64 0.128
-#>  6 Degrassi Community School     6        67 0.134
-#>  7 Degrassi Community School     7        54 0.108
-#>  8 Degrassi Community School     8        73 0.146
-#>  9 Shelbyville Elementary School 1        56 0.112
-#> 10 Shelbyville Elementary School 2        76 0.152
-#> # ... with 30 more rows
+#>  1 Degrassi Community School     1        54 0.108
+#>  2 Degrassi Community School     2        65 0.13 
+#>  3 Degrassi Community School     3        56 0.112
+#>  4 Degrassi Community School     4        59 0.118
+#>  5 Degrassi Community School     5        65 0.13 
+#>  6 Degrassi Community School     6        54 0.108
+#>  7 Degrassi Community School     7        65 0.13 
+#>  8 Degrassi Community School     8        82 0.164
+#>  9 Shelbyville Elementary School 1        71 0.142
+#> 10 Shelbyville Elementary School 2        59 0.118
+#> # ... with 31 more rows
 #> # i Use `print(n = ...)` to see more rows
 ```
