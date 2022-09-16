@@ -6,7 +6,7 @@
 #'
 #' @param x
 #'
-#' @return Character vector with achievment levels (NE1, Level 1, Level 2, Level 3, Level 4)
+#' @return Character vector with achievement levels (NE1, Level 1, Level 2, Level 3, Level 4)
 #' @export
 #'
 #' @examples
