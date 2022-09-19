@@ -3,7 +3,7 @@ pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   obt: obt.html
-last_built: 2022-09-16T20:02Z
+last_built: 2022-09-19T20:20Z
 urls:
   reference: https://grousell.github.io/obt/reference
   article: https://grousell.github.io/obt/articles
