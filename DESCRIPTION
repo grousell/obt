@@ -18,7 +18,8 @@ Suggests:
 Config/testthat/edition: 3
 Imports: 
     dplyr,
-    rlang
+    rlang,
+    stringr
 Depends: 
     R (>= 2.10)
 LazyData: true

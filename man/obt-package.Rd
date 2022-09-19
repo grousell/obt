@@ -12,6 +12,7 @@ The obt (Ontario Board Tools) is a collection of functions for data professional
 Useful links:
 \itemize{
   \item \url{https://github.com/grousell/obt}
+  \item \url{https://grousell.github.io/obt/}
   \item Report bugs at \url{https://github.com/grousell/obt/issues}
 }
 
