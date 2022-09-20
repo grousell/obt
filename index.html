@@ -41,6 +41,12 @@
 <li class="nav-item">
   <a class="nav-link" href="reference/index.html">Reference</a>
 </li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="articles/obt_summary_table.html">Summary Table</a>
+  </div>
+</li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
@@ -88,64 +94,17 @@
 <span><span class="co">#&gt; # A tibble: 2,500 x 3</span></span>
 <span><span class="co">#&gt;        id reading reading_level</span></span>
 <span><span class="co">#&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;        </span></span>
-<span><span class="co">#&gt;  1 310535 R       NE1          </span></span>
-<span><span class="co">#&gt;  2 324271 R       NE1          </span></span>
-<span><span class="co">#&gt;  3 394022 52      Level 1      </span></span>
-<span><span class="co">#&gt;  4 482099 A-      Level 4      </span></span>
-<span><span class="co">#&gt;  5 274236 D       Level 1      </span></span>
-<span><span class="co">#&gt;  6 271998 B-      Level 3      </span></span>
-<span><span class="co">#&gt;  7 424555 C+      Level 2      </span></span>
-<span><span class="co">#&gt;  8 314324 B-      Level 3      </span></span>
-<span><span class="co">#&gt;  9 281326 R       NE1          </span></span>
-<span><span class="co">#&gt; 10 318039 B-      Level 3      </span></span>
+<span><span class="co">#&gt;  1 175190 B-      Level 3      </span></span>
+<span><span class="co">#&gt;  2 280759 R       NE1          </span></span>
+<span><span class="co">#&gt;  3 379054 C       Level 2      </span></span>
+<span><span class="co">#&gt;  4 413406 B       Level 3      </span></span>
+<span><span class="co">#&gt;  5 335653 A-      Level 4      </span></span>
+<span><span class="co">#&gt;  6 202305 90      Level 4      </span></span>
+<span><span class="co">#&gt;  7 478795 65      Level 2      </span></span>
+<span><span class="co">#&gt;  8 477059 C       Level 2      </span></span>
+<span><span class="co">#&gt;  9 498422 68      Level 2      </span></span>
+<span><span class="co">#&gt; 10 178066 A       Level 4      </span></span>
 <span><span class="co">#&gt; # ... with 2,490 more rows</span></span>
-<span><span class="co">#&gt; # i Use `print(n = ...)` to see more rows</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="summary-table">Summary Table<a class="anchor" aria-label="anchor" href="#summary-table"></a>
-</h2>
-<p>This function provides a summary table of counts and percentages for either a single variable, or a grouped variable. This table can then be used directly with <code>ggplot2</code> for visualisations.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/grousell/obt" class="external-link">obt</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">ele_rc</span></span>
-<span></span>
-<span><span class="va">df</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="reference/obt_summary_table.html">obt_summary_table</a></span><span class="op">(</span><span class="va">school</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 5 x 3</span></span>
-<span><span class="co">#&gt;   school                            n  perc</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;                         &lt;int&gt; &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 Degrassi Community School       500   0.2</span></span>
-<span><span class="co">#&gt; 2 Shelbyville Elementary School   500   0.2</span></span>
-<span><span class="co">#&gt; 3 Southpark Elementary School     500   0.2</span></span>
-<span><span class="co">#&gt; 4 Springfield Elementary School   500   0.2</span></span>
-<span><span class="co">#&gt; 5 Watkins Middle School           500   0.2</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="grouped-summary-table">Grouped Summary Table<a class="anchor" aria-label="anchor" href="#grouped-summary-table"></a>
-</h2>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/grousell/obt" class="external-link">obt</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">ele_rc</span></span>
-<span></span>
-<span><span class="va">df</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="reference/obt_summary_table.html">obt_summary_table</a></span><span class="op">(</span><span class="va">school</span>, <span class="va">grade</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 41 x 4</span></span>
-<span><span class="co">#&gt; # Groups:   school [5]</span></span>
-<span><span class="co">#&gt;    school                        grade     n  perc</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;                         &lt;chr&gt; &lt;int&gt; &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Degrassi Community School     1        54 0.108</span></span>
-<span><span class="co">#&gt;  2 Degrassi Community School     2        65 0.13 </span></span>
-<span><span class="co">#&gt;  3 Degrassi Community School     3        56 0.112</span></span>
-<span><span class="co">#&gt;  4 Degrassi Community School     4        59 0.118</span></span>
-<span><span class="co">#&gt;  5 Degrassi Community School     5        65 0.13 </span></span>
-<span><span class="co">#&gt;  6 Degrassi Community School     6        54 0.108</span></span>
-<span><span class="co">#&gt;  7 Degrassi Community School     7        65 0.13 </span></span>
-<span><span class="co">#&gt;  8 Degrassi Community School     8        82 0.164</span></span>
-<span><span class="co">#&gt;  9 Shelbyville Elementary School 1        71 0.142</span></span>
-<span><span class="co">#&gt; 10 Shelbyville Elementary School 2        59 0.118</span></span>
-<span><span class="co">#&gt; # ... with 31 more rows</span></span>
 <span><span class="co">#&gt; # i Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 </div>
 </div>
