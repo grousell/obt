@@ -8,15 +8,16 @@
 [![R-CMD-check](https://github.com/grousell/obt/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/grousell/obt/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of the `obt` package is to provide tools for data professionals
-in Ontario school boards (and elsewhere) to work with common data sets
-across the province. This includes:  
-\* Report Card Data (elementary and secondary)  
-\* EQAO Data (Primary and Junior assessments of Reading, Writing and
-Mathematics, Grade 9 Assessments of Mathematics and the Ontario
-Secondary School Literacy Test) (pending)  
-\* Ontario University Application Center (OUAC) and Ontario College
-Application Service (OCAS) data (pending)
+The goal of the Ontario Board Tools `obt` package is to provide tools
+for data professionals in Ontario school boards (and elsewhere) to work
+with common data sets across the province. This includes:
+
+-   Report Card Data (elementary and secondary)  
+-   EQAO Data (Primary and Junior assessments of Reading, Writing and
+    Mathematics, Grade 9 Assessments of Mathematics and the Ontario
+    Secondary School Literacy Test) (pending)  
+-   Ontario University Application Center (OUAC) and Ontario College
+    Application Service (OCAS) data (pending)
 
 Features of this package include re-coding report card marks to
 
