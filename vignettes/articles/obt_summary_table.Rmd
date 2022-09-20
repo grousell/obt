@@ -1,0 +1,51 @@
+---
+title: "Summary Table"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The `obt_summary_table` function allows for quick summaries of one or two variables. It returns a tibble with the grouping variable(s), count and percentage within that group. The resulting tibble can easily be piped into a ggplot2 function for visualisation. 
+
+### One Variable Summary
+```{r one_variable, warning=FALSE, message=FALSE}
+library(obt)
+library(dplyr)
+library(ggplot2)
+df <- ele_rc
+
+df |> 
+  obt_summary_table(school)
+```
+
+### Two Variable Summary
+```{r two_variable}
+
+df |> 
+  obt_summary_table(school, grade) |> 
+  print(n = Inf)
+
+```
+
+### Visualisation
+```{r visual}
+df |> 
+  obt_summary_table(school) |> 
+  ggplot (aes (x = school, y = perc)) + 
+  geom_col (fill = "#bcc4d7") + 
+  scale_x_discrete(label = scales::wrap_format(10)) + 
+  scale_y_continuous(labels = scales::percent_format(), 
+                     limits = c(0, 1)) + 
+  geom_text (aes (label = scales::percent(perc)), 
+             vjust = -1) + 
+  labs (title = "Percentage of Students by Elementary Schools", 
+        x = NULL, 
+        y = "Percent") + 
+  theme_minimal()
+
+```
+
