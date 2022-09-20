@@ -14,17 +14,23 @@ knitr::opts_chunk$set(
 )
 ```
 
-The goal of the `obt` package is to provide tools for data professionals in Ontario school boards (and elsewhere) to work with common data sets across the province. This includes:
-* Report Card Data (elementary and secondary)
-* EQAO Data (Primary and Junior assessments of Reading, Writing and Mathematics, Grade 9 Assessments of Mathematics and the Ontario Secondary School Literacy Test)
-* Ontario University Application Center (OUAC) and Ontario College Application Service (OCAS) data
+The goal of the `obt` package is to provide tools for data professionals in Ontario school boards (and elsewhere) to work with common data sets across the province. This includes:  
+* Report Card Data (elementary and secondary)  
+* EQAO Data (Primary and Junior assessments of Reading, Writing and Mathematics, Grade 9 Assessments of Mathematics and the Ontario Secondary School Literacy Test) (pending)   
+* Ontario University Application Center (OUAC) and Ontario College Application Service (OCAS) data (pending)  
 
-```{r setup}
+Included with the package are fictional data for both elementary (wide format) and secondary (long format) report card marks. 
+
+```{r setup, warning=FALSE, message=FALSE}
 library(obt)
 library(dplyr)
-library (ggplot2)
+```
 
-df <- ele_rc
-
+```{r ele_rc}
 head (ele_rc)
 ```
+
+```{r sec_rc}
+head (sec_rc)
+```
+

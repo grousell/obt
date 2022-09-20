@@ -19,30 +19,25 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/grousell/obt/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/grousell/obt/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of Ontario Board Tools (obt)) is to provide data professionals in Ontario school boards (and elsewhere) tools to assist with data cleaning and analyses of commonly used data sets. These include:
-- Elementary and Secondary Report Card
-- EQAO
+The goal of the `obt` package is to provide tools for data professionals in Ontario school boards (and elsewhere) to work with common data sets across the province. This includes:  
+* Report Card Data (elementary and secondary)  
+* EQAO Data (Primary and Junior assessments of Reading, Writing and Mathematics, Grade 9 Assessments of Mathematics and the Ontario Secondary School Literacy Test) (pending)   
+* Ontario University Application Center (OUAC) and Ontario College Application Service (OCAS) data (pending)  
+
+Features of this package include re-coding report card marks to  
+
+* Ontario achievement levels  
+* At/Above Standard (e.e Level 3 or Level 4)  
+* Pass/Fail  
+* Alpha marks to numeric equivalent (i.e. A = 90, B- = 72, D = 55)  
+
 
 ## Installation
 
-You can install the development version of obt from [GitHub](https://github.com/) with:
+You can install the development version of `obt` from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("grousell/obt")
-```
-
-## Recode Report Card Marks to Achievement Levels 
-
-This functions takes a vector of report card marks and re-codes into Ontario achievement levels. 
-```{r recode_reportcard_to_levels, warning=FALSE, message=FALSE}
-library(obt)
-library(dplyr)
-df <- ele_rc
-
-df |>
-  select (id, reading) |> 
-  mutate (reading_level = obt_recode_rc_to_levels(reading))
-  
 ```
 
