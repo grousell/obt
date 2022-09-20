@@ -1,0 +1,42 @@
+---
+title: "Secondary Courses to Level of Study"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>", 
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+```{r setup}
+library(obt)
+library(dplyr)
+```
+
+## Recoding Course Number to Level of Study
+This function takes the fifth digit of the course number (ENG2D, FSF3U) and creates a vector with the level of study. 
+
+* L = Locally Developed  
+* P = Applied  
+* D = Academic  
+* E = Workplace  
+* C = College  
+* U = University  
+* O = Open  
+* M = University/College  
+* N = Alternative Education  
+* W = De-streamed
+
+
+```{r sec_level}
+
+set.seed (325)
+sec_rc |> 
+  select (id, course_number) |> 
+  mutate (level_study = obt_sec_level_study(course_number)) |> 
+  slice_sample (n = 10)
+
+```

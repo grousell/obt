@@ -38,23 +38,26 @@ obt_recode_letter_percent <- function (x){
     G1_6 == "D-" ~ "52",
     G1_6 == "D-" ~ "52",
     G1_6 == "R" ~ "45",
-    TRUE ~ G1_6)
+    TRUE ~ G1_6
+    )
 
   # Combine back to single vector
 
   z <- paste0 (G1_6, G7_8)
   z <- ifelse (z == "I", NA,
                ifelse (z == "ALT", NA,
-                       ifelse (z == "NA", NA, z)
+                       ifelse (z == "NA", NA,
+                               ifelse (x == "W", NA,
+                                       ifelse (x == "V", NA, z)
+                                       )
+                               )
                        )
-               )
+  )
   # Convert to numeric
   z <- as.numeric(z)
 
   return (z)
   }
-
-
 
 
 

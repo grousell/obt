@@ -1,0 +1,90 @@
+---
+title: "Recoding Report Card Marks"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message=FALSE,
+  warning = FALSE
+)
+```
+
+```{r setup}
+library(obt)
+library (dplyr)
+```
+
+The `obt` package contains a series of functions to recode report card data into commonly used variables. 
+
+## Report Card Marks to Achievement Levels
+
+```{r rc_ach_levels}
+
+ele_rc |> 
+  mutate (reading_levels = obt_recode_rc_to_levels(reading)) |> 
+  select (school, id, reading, reading_levels) |> 
+  slice_sample(n = 10)
+
+```
+
+## Report Card Marks to Met Standard / Did Not Meet Standard
+
+```{r rc_to_standard}
+
+sec_rc |> 
+  mutate (final_ps = obt_recode_rc_L34(final)) |> 
+  select (school, id, course_number, final, final_ps)|> 
+  slice_sample(n = 10)
+
+```
+
+
+## Report Card Marks to Pass Fail
+Results that are not the traditional alpha/numeric mark remain the same. For example ALT (alternative education), I (Insufficent) and NA (missing data). 
+
+```{r rc_to_pass_fail}
+
+ele_rc |> 
+  mutate (read_pass_fail = obt_recode_rc_pass_fail(reading)) |> 
+  select (school, id, reading, read_pass_fail)|> 
+  arrange (read_pass_fail) |> 
+  group_by (read_pass_fail) |> 
+  slice_sample(n = 2)
+
+```
+
+
+## Report Letter Grade to Percent
+This function will take a column that contains all alpha grades, or a combination of alpha and numeric grades, and convert the alpha grades to a numeric equivalent.  
+
+**NOTE** - this may produce a warning message: *NAs introduced by coercion*. This means that any non-standard alpha mark has been converted to NA. 
+
+* A+ = 90
+* A  = 85"
+* A- = 80
+* B+ = 78
+* B  = 75
+* B- = 72"
+* C+ = 68
+* C  = 65
+* C- = 62
+* D+ = 58
+* D = 55
+* D- = 52
+* D- = 52
+* R  = 45
+* All else = NA
+
+```{r rc_alpha_to_numeric}
+
+set.seed (168)
+
+ele_rc |> 
+  mutate (math_numeric = obt_recode_letter_percent(mathematics)) |> 
+  select (school, id, mathematics, math_numeric) |> 
+  slice_sample(n = 10)
+
+```
+
