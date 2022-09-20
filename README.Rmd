@@ -46,27 +46,3 @@ df |>
   
 ```
 
-## Summary Table
-
-This function provides a summary table of counts and percentages for either a single variable, or a grouped variable. This table can then be used directly with `ggplot2` for visualisations. 
-```{r summary_table}
-library(obt)
-
-df <- ele_rc
-
-df |> 
-  obt_summary_table(school)
-
-```
-
-## Grouped Summary Table
-
-```{r grouped_summary_table}
-library(obt)
-
-df <- ele_rc
-
-df |> 
-  obt_summary_table(school, grade)
-
-```

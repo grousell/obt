@@ -39,66 +39,16 @@ df |>
 #> # A tibble: 2,500 x 3
 #>        id reading reading_level
 #>     <int> <chr>   <chr>        
-#>  1 310535 R       NE1          
-#>  2 324271 R       NE1          
-#>  3 394022 52      Level 1      
-#>  4 482099 A-      Level 4      
-#>  5 274236 D       Level 1      
-#>  6 271998 B-      Level 3      
-#>  7 424555 C+      Level 2      
-#>  8 314324 B-      Level 3      
-#>  9 281326 R       NE1          
-#> 10 318039 B-      Level 3      
+#>  1 175190 B-      Level 3      
+#>  2 280759 R       NE1          
+#>  3 379054 C       Level 2      
+#>  4 413406 B       Level 3      
+#>  5 335653 A-      Level 4      
+#>  6 202305 90      Level 4      
+#>  7 478795 65      Level 2      
+#>  8 477059 C       Level 2      
+#>  9 498422 68      Level 2      
+#> 10 178066 A       Level 4      
 #> # ... with 2,490 more rows
-#> # i Use `print(n = ...)` to see more rows
-```
-
-## Summary Table
-
-This function provides a summary table of counts and percentages for
-either a single variable, or a grouped variable. This table can then be
-used directly with `ggplot2` for visualisations.
-
-``` r
-library(obt)
-
-df <- ele_rc
-
-df |> 
-  obt_summary_table(school)
-#> # A tibble: 5 x 3
-#>   school                            n  perc
-#>   <chr>                         <int> <dbl>
-#> 1 Degrassi Community School       500   0.2
-#> 2 Shelbyville Elementary School   500   0.2
-#> 3 Southpark Elementary School     500   0.2
-#> 4 Springfield Elementary School   500   0.2
-#> 5 Watkins Middle School           500   0.2
-```
-
-## Grouped Summary Table
-
-``` r
-library(obt)
-
-df <- ele_rc
-
-df |> 
-  obt_summary_table(school, grade)
-#> # A tibble: 41 x 4
-#> # Groups:   school [5]
-#>    school                        grade     n  perc
-#>    <chr>                         <chr> <int> <dbl>
-#>  1 Degrassi Community School     1        54 0.108
-#>  2 Degrassi Community School     2        65 0.13 
-#>  3 Degrassi Community School     3        56 0.112
-#>  4 Degrassi Community School     4        59 0.118
-#>  5 Degrassi Community School     5        65 0.13 
-#>  6 Degrassi Community School     6        54 0.108
-#>  7 Degrassi Community School     7        65 0.13 
-#>  8 Degrassi Community School     8        82 0.164
-#>  9 Shelbyville Elementary School 1        71 0.142
-#> 10 Shelbyville Elementary School 2        59 0.118
-#> # ... with 31 more rows
 #> # i Use `print(n = ...)` to see more rows
 ```

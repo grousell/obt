@@ -22,6 +22,7 @@ The goal of the `obt` package is to provide tools for data professionals in Onta
 ```{r setup}
 library(obt)
 library(dplyr)
+library (ggplot2)
 
 df <- ele_rc
 
