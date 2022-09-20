@@ -98,16 +98,16 @@
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 10 × 4</span></span></span>
 <span><span class="co">#&gt;    school                            id reading reading_levels</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Degrassi Community School     <span style="text-decoration: underline;">240</span>689 A       Level 4       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Shelbyville Elementary School <span style="text-decoration: underline;">475</span>866 B       Level 3       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Shelbyville Elementary School <span style="text-decoration: underline;">364</span>055 B       Level 3       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Springfield Elementary School <span style="text-decoration: underline;">275</span>189 C+      Level 2       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Watkins Middle School         <span style="text-decoration: underline;">367</span>910 B       Level 3       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Degrassi Community School     <span style="text-decoration: underline;">280</span>317 B-      Level 3       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Shelbyville Elementary School <span style="text-decoration: underline;">418</span>361 C       Level 2       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Springfield Elementary School <span style="text-decoration: underline;">333</span>445 B-      Level 3       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Southpark Elementary School   <span style="text-decoration: underline;">414</span>269 A-      Level 4       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Springfield Elementary School <span style="text-decoration: underline;">233</span>261 C       Level 2</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Degrassi Community School     <span style="text-decoration: underline;">298</span>582 B       Level 3       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Watkins Middle School         <span style="text-decoration: underline;">247</span>709 I       NE1           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Degrassi Community School     <span style="text-decoration: underline;">207</span>361 D+      Level 1       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Southpark Elementary School   <span style="text-decoration: underline;">419</span>451 B       Level 3       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Southpark Elementary School   <span style="text-decoration: underline;">242</span>838 91      Level 4       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Shelbyville Elementary School <span style="text-decoration: underline;">435</span>252 B+      Level 3       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Southpark Elementary School   <span style="text-decoration: underline;">490</span>236 58      Level 1       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Degrassi Community School     <span style="text-decoration: underline;">401</span>372 70      Level 3       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Springfield Elementary School <span style="text-decoration: underline;">329</span>622 72      Level 3       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Springfield Elementary School <span style="text-decoration: underline;">387</span>849 A-      Level 4</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="report-card-marks-to-met-standard-did-not-meet-standard">Report Card Marks to Met Standard / Did Not Meet Standard<a class="anchor" aria-label="anchor" href="#report-card-marks-to-met-standard-did-not-meet-standard"></a>
@@ -119,18 +119,18 @@
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span> <span class="op">(</span><span class="va">school</span>, <span class="va">id</span>, <span class="va">course_number</span>, <span class="va">final</span>, <span class="va">final_ps</span><span class="op">)</span><span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice_sample</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 10 × 5</span></span></span>
-<span><span class="co">#&gt;    school                     id course_number final final_ps             </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Ridgemont HS           <span style="text-decoration: underline;">803</span>922 HFN2O         97    met_standard         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Degrassi High          <span style="text-decoration: underline;">902</span>632 ENG4U         60    did_not_meet_standard</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Shermer High School    <span style="text-decoration: underline;">611</span>411 MEL3E         50    did_not_meet_standard</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Westerburg High School <span style="text-decoration: underline;">649</span>330 PPL3OB        80    met_standard         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Degrassi High          <span style="text-decoration: underline;">677</span>618 CLU3M         65    did_not_meet_standard</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Shermer High School    <span style="text-decoration: underline;">621</span>957 SNC1P         62    did_not_meet_standard</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Shermer High School    <span style="text-decoration: underline;">594</span>176 SNC4E         67    did_not_meet_standard</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Degrassi High          <span style="text-decoration: underline;">761</span>571 AMU1O         29    did_not_meet_standard</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Ridgemont HS           <span style="text-decoration: underline;">758</span>009 CGC1DF        68    did_not_meet_standard</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Westerburg High School <span style="text-decoration: underline;">715</span>614 PPL4OB        70    met_standard</span></span></code></pre></div>
+<span><span class="co">#&gt;    school                  id course_number final final_ps             </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Shermer High School <span style="text-decoration: underline;">569</span>040 SCH3U         67    did_not_meet_standard</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Degrassi High       <span style="text-decoration: underline;">855</span>590 MPM2D         78    met_standard         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Shermer High School <span style="text-decoration: underline;">666</span>333 KPFDN         AL    AL                   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Shermer High School <span style="text-decoration: underline;">740</span>592 KBBFN         0     did_not_meet_standard</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Degrassi High       <span style="text-decoration: underline;">962</span>247 TCC4E         75    met_standard         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Ridgemont HS        <span style="text-decoration: underline;">636</span>773 ENG3C         64    did_not_meet_standard</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Shermer High School <span style="text-decoration: underline;">762</span>718 SNC2P         61    did_not_meet_standard</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Shermer High School <span style="text-decoration: underline;">643</span>956 TCC3E         50    did_not_meet_standard</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Shermer High School <span style="text-decoration: underline;">994</span>402 MCV4U         70    met_standard         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Ridgemont HS        <span style="text-decoration: underline;">802</span>245 SPH4U         92    met_standard</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="report-card-marks-to-pass-fail">Report Card Marks to Pass Fail<a class="anchor" aria-label="anchor" href="#report-card-marks-to-pass-fail"></a>
@@ -148,16 +148,16 @@
 <span><span class="co">#&gt; <span style="color: #949494;"># Groups:   read_pass_fail [5]</span></span></span>
 <span><span class="co">#&gt;    school                            id reading read_pass_fail</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Degrassi Community School     <span style="text-decoration: underline;">375</span>101 ALT     ALT           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Shelbyville Elementary School <span style="text-decoration: underline;">375</span>231 ALT     ALT           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Shelbyville Elementary School <span style="text-decoration: underline;">324</span>593 R       fail          </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Shelbyville Elementary School <span style="text-decoration: underline;">409</span>446 R       fail          </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Watkins Middle School         <span style="text-decoration: underline;">247</span>709 I       I             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Shelbyville Elementary School <span style="text-decoration: underline;">512</span>569 I       I             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Southpark Elementary School   <span style="text-decoration: underline;">153</span>593 B+      pass          </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Springfield Elementary School <span style="text-decoration: underline;">300</span>175 C+      pass          </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Watkins Middle School         <span style="text-decoration: underline;">295</span>863 <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>            </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Shelbyville Elementary School <span style="text-decoration: underline;">117</span>376 <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Shelbyville Elementary School <span style="text-decoration: underline;">505</span>833 ALT     ALT           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Watkins Middle School         <span style="text-decoration: underline;">125</span>547 ALT     ALT           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Degrassi Community School     <span style="text-decoration: underline;">361</span>151 R       fail          </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Springfield Elementary School <span style="text-decoration: underline;">489</span>112 R       fail          </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Shelbyville Elementary School <span style="text-decoration: underline;">331</span>883 I       I             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Springfield Elementary School <span style="text-decoration: underline;">375</span>981 I       I             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Southpark Elementary School   <span style="text-decoration: underline;">213</span>461 62      pass          </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Degrassi Community School     <span style="text-decoration: underline;">347</span>611 A       pass          </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Shelbyville Elementary School <span style="text-decoration: underline;">117</span>376 <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>            </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Watkins Middle School         <span style="text-decoration: underline;">396</span>929 <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="report-letter-grade-to-percent">Report Letter Grade to Percent<a class="anchor" aria-label="anchor" href="#report-letter-grade-to-percent"></a>
