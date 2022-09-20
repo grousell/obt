@@ -80,23 +80,16 @@
 
     
     
-<p>The goal of the <code>obt</code> package is to provide tools for data professionals in Ontario school boards (and elsewhere) to work with common data sets across the province. This includes: * Report Card Data (elementary and secondary) * EQAO Data (Primary and Junior assessments of Reading, Writing and Mathematics, Grade 9 Assessments of Mathematics and the Ontario Secondary School Literacy Test) * Ontario University Application Center (OUAC) and Ontario College Application Service (OCAS) data</p>
+<p>The goal of the <code>obt</code> package is to provide tools for data professionals in Ontario school boards (and elsewhere) to work with common data sets across the province. This includes:<br>
+* Report Card Data (elementary and secondary)<br>
+* EQAO Data (Primary and Junior assessments of Reading, Writing and Mathematics, Grade 9 Assessments of Mathematics and the Ontario Secondary School Literacy Test) (pending)<br>
+* Ontario University Application Center (OUAC) and Ontario College Application Service (OCAS) data (pending)</p>
+<p>Included with the package are fictional data for both elementary (wide format) and secondary (long format) report card marks.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/grousell/obt" class="external-link">obt</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Attaching package: 'dplyr'</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:stats':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     filter, lag</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span> <span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">ele_rc</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span> <span class="op">(</span><span class="va">ele_rc</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span> <span class="op">(</span><span class="va">ele_rc</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 16</span></span></span>
 <span><span class="co">#&gt;       id school    grade respo…¹ indep…² initi…³ organ…⁴ colla…⁵ self_…⁶ reading</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
@@ -111,6 +104,21 @@
 <span><span class="co">#&gt; <span style="color: #949494;">#   geography &lt;chr&gt;, and abbreviated variable names ¹​responsibility,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   ²​independent_work, ³​initiative, ⁴​organization, ⁵​collaboration,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   ⁶​self_regulation</span></span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span> <span class="op">(</span><span class="va">sec_rc</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 13</span></span></span>
+<span><span class="co">#&gt;       id school    cours…¹ poten…² earne…³ mid_t…⁴ final colla…⁵ indep…⁶ initi…⁷</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> <span style="text-decoration: underline;">861</span>423 Shermer … ENG3C   1       1       30      51    N       N       N      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> <span style="text-decoration: underline;">959</span>022 Shermer … HPW3C   1       1       76      81    G       G       G      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> <span style="text-decoration: underline;">924</span>795 Shermer … CLU3M   1       1       99      97    E       E       E      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> <span style="text-decoration: underline;">773</span>851 Shermer … AMI4M   1       1       91      92    E       E       E      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> <span style="text-decoration: underline;">611</span>411 Shermer … MEL3E   1       1       50      50    S       S       N      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> <span style="text-decoration: underline;">621</span>233 Shermer … PLF4M   1       0       60      45    G       S       N      </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 3 more variables: organization &lt;chr&gt;, responsibility &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   self_regulation &lt;chr&gt;, and abbreviated variable names ¹​course_number,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   ²​potential_credit_hrs, ³​earned_credit_hrs, ⁴​mid_term, ⁵​collaboration,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   ⁶​independent_work, ⁷​initiative</span></span></span></code></pre></div>
   </main>
 </div>
 

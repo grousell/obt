@@ -70,42 +70,27 @@
 <div class="page-header"><h1 id="obt">obt<a class="anchor" aria-label="anchor" href="#obt"></a>
 </h1></div>
 <!-- badges: start -->
-<p>The goal of Ontario Board Tools (obt)) is to provide data professionals in Ontario school boards (and elsewhere) tools to assist with data cleaning and analyses of commonly used data sets. These include: - Elementary and Secondary Report Card - EQAO</p>
+<p>The goal of the <code>obt</code> package is to provide tools for data professionals in Ontario school boards (and elsewhere) to work with common data sets across the province. This includes:<br>
+* Report Card Data (elementary and secondary)<br>
+* EQAO Data (Primary and Junior assessments of Reading, Writing and Mathematics, Grade 9 Assessments of Mathematics and the Ontario Secondary School Literacy Test) (pending)<br>
+* Ontario University Application Center (OUAC) and Ontario College Application Service (OCAS) data (pending)</p>
+<p>Features of this package include re-coding report card marks to</p>
+<ul>
+<li>Ontario achievement levels<br>
+</li>
+<li>At/Above Standard (e.e Level 3 or Level 4)<br>
+</li>
+<li>Pass/Fail<br>
+</li>
+<li>Alpha marks to numeric equivalent (i.e. A = 90, B- = 72, D = 55)</li>
+</ul>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of obt from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>You can install the development version of <code>obt</code> from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"grousell/obt"</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="recode-report-card-marks-to-achievement-levels">Recode Report Card Marks to Achievement Levels<a class="anchor" aria-label="anchor" href="#recode-report-card-marks-to-achievement-levels"></a>
-</h2>
-<p>This functions takes a vector of report card marks and re-codes into Ontario achievement levels.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/grousell/obt" class="external-link">obt</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">ele_rc</span></span>
-<span></span>
-<span><span class="va">df</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span> <span class="op">(</span><span class="va">id</span>, <span class="va">reading</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span> <span class="op">(</span>reading_level <span class="op">=</span> <span class="fu"><a href="reference/obt_recode_rc_to_levels.html">obt_recode_rc_to_levels</a></span><span class="op">(</span><span class="va">reading</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 2,500 x 3</span></span>
-<span><span class="co">#&gt;        id reading reading_level</span></span>
-<span><span class="co">#&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;        </span></span>
-<span><span class="co">#&gt;  1 175190 B-      Level 3      </span></span>
-<span><span class="co">#&gt;  2 280759 R       NE1          </span></span>
-<span><span class="co">#&gt;  3 379054 C       Level 2      </span></span>
-<span><span class="co">#&gt;  4 413406 B       Level 3      </span></span>
-<span><span class="co">#&gt;  5 335653 A-      Level 4      </span></span>
-<span><span class="co">#&gt;  6 202305 90      Level 4      </span></span>
-<span><span class="co">#&gt;  7 478795 65      Level 2      </span></span>
-<span><span class="co">#&gt;  8 477059 C       Level 2      </span></span>
-<span><span class="co">#&gt;  9 498422 68      Level 2      </span></span>
-<span><span class="co">#&gt; 10 178066 A       Level 4      </span></span>
-<span><span class="co">#&gt; # ... with 2,490 more rows</span></span>
-<span><span class="co">#&gt; # i Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
