@@ -1,12 +1,12 @@
 pandoc: 2.19.2
-pkgdown: 2.0.6
+pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   obt_recode_rc_to_levels: obt_recode_rc_to_levels.html
   obt_sec_level_study-R: obt_sec_level_study-R.html
   obt_summary_table: obt_summary_table.html
   obt: obt.html
-last_built: 2022-11-19T16:15Z
+last_built: 2023-08-24T13:10Z
 urls:
   reference: https://grousell.github.io/obt/reference
   article: https://grousell.github.io/obt/articles
