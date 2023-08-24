@@ -7,20 +7,20 @@
 #' @param x
 #' Vector of report card marks. Can be either alpha (C+, B-, A) or numeric (88, 63, 79)
 #'
-#' @return Character vector with achievement levels (NE1, Level 1, Level 2, Level 3, Level 4)
+#' @return Factor vector with achievement levels (NE1, Level 1, Level 2, Level 3, Level 4)
 #' @export
 
 
 
-obt_recode_rc_to_levels <- function (x){
+obt_recode_rc_to_levels <- function(x){
 
   NE1 <- c(as.character(c(0:49)), "I", "R")
-  level1 <- c(as.character (c(50:59)), "D-", "D", "D+")
-  level2 <- c(as.character (c(60:69)), "C-", "C", "C+")
-  level3 <- c(as.character (c(70:79)), "B-", "B", "B+")
-  level4 <- c(as.character (c(80:100)), "A-", "A", "A+")
+  level1 <- c(as.character(c(50:59)), "D-", "D", "D+")
+  level2 <- c(as.character(c(60:69)), "C-", "C", "C+")
+  level3 <- c(as.character(c(70:79)), "B-", "B", "B+")
+  level4 <- c(as.character(c(80:100)), "A-", "A", "A+")
 
-  y <- dplyr::case_when (
+  y <- dplyr::case_when(
     x %in% NE1 ~ "NE1",
     x %in% level1 ~ "Level 1",
     x %in% level2 ~ "Level 2",
@@ -28,6 +28,6 @@ obt_recode_rc_to_levels <- function (x){
     x %in% level4 ~ "Level 4",
     TRUE ~ x)
 
-  y
+  y <- factor(y, levels = c("I", "R", "W", "ALT", "NE1", "Level 1", "Level 2", "Level 3", "Level 4"))
   }
 

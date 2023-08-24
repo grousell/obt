@@ -6,14 +6,14 @@ title: "Recoding Report Card Marks"
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  message=FALSE,
+  message = FALSE,
   warning = FALSE
 )
 ```
 
 ```{r setup}
 library(obt)
-library (dplyr)
+library(dplyr)
 ```
 
 The `obt` package contains a series of functions to recode report card data into commonly used variables. 
@@ -23,8 +23,8 @@ The `obt` package contains a series of functions to recode report card data into
 ```{r rc_ach_levels}
 
 ele_rc |> 
-  mutate (reading_levels = obt_recode_rc_to_levels(reading)) |> 
-  select (school, id, reading, reading_levels) |> 
+  mutate(reading_levels = obt_recode_rc_to_levels(reading)) |> 
+  select(school, id, reading, reading_levels) |> 
   slice_sample(n = 10)
 
 ```
@@ -34,8 +34,8 @@ ele_rc |>
 ```{r rc_to_standard}
 
 sec_rc |> 
-  mutate (final_ps = obt_recode_rc_L34(final)) |> 
-  select (school, id, course_number, final, final_ps)|> 
+  mutate(final_ps = obt_recode_rc_L34(final)) |> 
+  select(school, id, course_number, final, final_ps) |> 
   slice_sample(n = 10)
 
 ```
@@ -47,10 +47,10 @@ Results that are not the traditional alpha/numeric mark remain the same. For exa
 ```{r rc_to_pass_fail}
 
 ele_rc |> 
-  mutate (read_pass_fail = obt_recode_rc_pass_fail(reading)) |> 
-  select (school, id, reading, read_pass_fail)|> 
-  arrange (read_pass_fail) |> 
-  group_by (read_pass_fail) |> 
+  mutate(read_pass_fail = obt_recode_rc_pass_fail(reading)) |> 
+  select(school, id, reading, read_pass_fail) |> 
+  arrange(read_pass_fail) |> 
+  group_by(read_pass_fail) |> 
   slice_sample(n = 2)
 
 ```
@@ -79,11 +79,11 @@ This function will take a column that contains all alpha grades, or a combinatio
 
 ```{r rc_alpha_to_numeric}
 
-set.seed (168)
+set.seed(168)
 
 ele_rc |> 
-  mutate (math_numeric = obt_recode_letter_percent(mathematics)) |> 
-  select (school, id, mathematics, math_numeric) |> 
+  mutate(math_numeric = obt_recode_letter_percent(mathematics)) |> 
+  select(school, id, mathematics, math_numeric) |> 
   slice_sample(n = 10)
 
 ```

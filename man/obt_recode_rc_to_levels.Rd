@@ -10,7 +10,7 @@ obt_recode_rc_to_levels(x)
 \item{x}{Vector of report card marks. Can be either alpha (C+, B-, A) or numeric (88, 63, 79)}
 }
 \value{
-Character vector with achievement levels (NE1, Level 1, Level 2, Level 3, Level 4)
+Factor vector with achievement levels (NE1, Level 1, Level 2, Level 3, Level 4)
 }
 \description{
 This function takes report card marks, both alpha (A+, B, C-, etc.) and numeric (68, 72, 86, etc.)
